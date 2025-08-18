@@ -24,3 +24,303 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/*Ejercicio 1*/
+/* Contenedor de la tabla */
+#tableejercicio1 {
+  width: 80%;
+  margin: 25px auto;
+  border-collapse: collapse; /* Elimina los espacios entre celdas */
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden; /* Aplica bordes redondeados bien */
+}
+
+/* Encabezados */
+#atributos1 th {
+  background-color: #2b2b2b;
+  color: #4db8ff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #4db8ff;
+}
+
+/* Filas de datos */
+#data1 td {
+  padding: 12px;
+  border-bottom: 1px solid #444;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover en las filas */
+#data1:hover {
+  background-color: #333;
+  cursor: pointer;
+}
+
+/* Zebra stripes (filas alternas más claras) */
+#tableejercicio1 tr:nth-child(even) td {
+  background-color: #242424;
+}
+
+/* Bordes suaves en la tabla */
+#tableejercicio1 td, 
+#tableejercicio1 th {
+  border-right: 1px solid #444;
+}
+
+#tableejercicio1 td:last-child,
+#tableejercicio1 th:last-child {
+  border-right: none;
+}
+
+
+/*Ejercicio 2*/
+/* Contenedor principal de la lista */
+#listaejercicio2 {
+  width: 75%;
+  margin: 20px auto;
+  padding: 15px 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilo para cada <li> */
+#datalistaejer2 {
+  margin: 12px 0;
+  padding: 12px 15px;
+  background-color: #2b2b2b;
+  border-left: 4px solid #4db8ff; /* Detalle azul */
+  border-radius: 4px;
+  list-style: none; /* Quitamos las viñetas por defecto */
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Ícono/viñeta personalizada con círculo azul */
+#datalistaejer2::before {
+  content: "✔"; 
+  color: #4db8ff;
+  font-weight: bold;
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Hover efecto elegante */
+#datalistaejer2:hover {
+  background-color: #3a3a3a;
+  transform: translateX(5px);
+  cursor: pointer;
+}
+
+
+/*Ejercicio 3*/
+/* Lista principal */
+#listaejercicio3 {
+  width: 70%;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: white;
+  font-family: Arial, sans-serif;
+  counter-reset: item; /* Para numeración personalizada */
+}
+
+/* Elementos de la lista */
+#datalistaejer3 {
+  margin: 10px 0;
+  padding: 12px 15px;
+  background-color: #2b2b2b;
+  border-left: 4px solid #4db8ff; /* Detalle azul */
+  border-radius: 4px;
+  list-style: none; /* Quitamos numeración default */
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* Numeración personalizada estilo elegante */
+#datalistaejer3::before {
+  counter-increment: item;
+  content: counter(item) ".";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4db8ff;
+  font-weight: bold;
+}
+
+/* Hover efecto */
+#datalistaejer3:hover {
+  background-color: #3a3a3a;
+  cursor: pointer;
+}
+
+
+/*Ejercicio 4*/
+
+/* Tabla principal */
+#tablaejercicio4 {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  overflow: hidden; /* Mantener bordes redondeados */
+}
+
+/* Encabezados */
+#tablaatributos th {
+  background-color: #333;
+  color: #4db8ff; /* Azul para resaltar */
+  padding: 10px;
+  border: 1px solid #555;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Filas de datos */
+#tabladatos td {
+  border: 1px solid #444;
+  padding: 10px;
+  vertical-align: top;
+}
+
+/* Zebra effect */
+#tabladatos:nth-child(even) {
+  background-color: #222;
+}
+
+#tabladatos:nth-child(odd) {
+  background-color: #111;
+}
+
+/* Hover fila */
+#tabladatos:hover {
+  background-color: #333;
+}
+
+/* Listas dentro de celdas */
+#datalista {
+  margin: 0;
+  padding-left: 15px;
+  list-style-type: none; /* Sin viñetas */
+}
+
+#datafromlista {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #2b2b2b;
+  border-radius: 4px;
+  border-left: 3px solid #4db8ff; /* Detalle visual */
+}
+
+
+/*Ejercicio 5*/
+
+#tittle-blog {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 30px 0;
+  padding: 15px;
+  color: #4db8ff;          /* Azul claro, igual al h2 */
+  background-color: #111;  /* Fondo más oscuro para destacar */
+  border: 2px solid #4db8ff;
+  border-radius: 8px;
+  letter-spacing: 2px;     /* Espaciado entre letras */
+  text-transform: uppercase;
+}
+
+
+/* Contenedor general */
+#container-blog {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  border: 1px solid #444;
+  padding: 15px;
+  margin: 20px auto;
+  width: 80%;
+  border-radius: 8px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Títulos */
+#container-blog h1, 
+#container-blog h2, 
+#container-blog h3, 
+#container-blog h4, 
+#container-blog h5, 
+#container-blog h6 {
+  margin: 8px 0;
+}
+
+#container-blog h2 {
+  color: #4db8ff;
+}
+
+#container-blog h3 {
+  color: #ffcc00;
+}
+
+#container-blog h4 {
+  color: #66ff66;
+}
+
+/* Categorías */
+#container-categorias {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #262626;
+  border-radius: 6px;
+}
+
+#container-categorias ul {
+  list-style-type: none;
+  padding-left: 15px;
+}
+
+#container-categorias li {
+  margin: 5px 0;
+}
+
+/* Comentarios */
+#Container-Comentarios {
+  background-color: #2b2b2b;
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 3px solid #4db8ff;
+  border-radius: 6px;
+}
+
+/* Respuestas */
+#container-respuestas {
+  margin-left: 20px;
+  padding: 8px;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Reacciones */
+#container-reacciones {
+  margin-left: 20px;
+  padding: 5px;
+  background-color: #444;
+  border-radius: 4px;
+}
+
