@@ -166,28 +166,31 @@ export default function Home() {
 
   return (
     <div>
-
       <table id="tableejercicio1">
-        <tr id="atributos1">
-          <th>Nombre</th>
-          <th>Precio</th>
-          <th>Categoria</th>
-        </tr>
+        <thead id="atributos1">
+          <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoria</th>
+          </tr>
+        </thead>
+        <tbody>
         {
           productos.map((valor, indice)=>(
-            <tr id="data1">
+            <tr key={valor.id} id="data1">
               <td>{valor.nombre}</td>
               <td>{valor.precio}</td>
               <td>{valor.categoria.nombre}</td>
             </tr>
           ))
         }
+        </tbody>
       </table>
 
       <ul id="listaejercicio2">
         {
           usuarios.map((valor, indice)=>(
-            <li id="datalistaejer2">Nombre: {valor.nombre} Direccion: {valor.direccion.calle} - {valor.direccion.ciudad} - {valor.direccion.pais}</li>
+            <li key={valor.id} id="datalistaejer2">Nombre: {valor.nombre} Direccion: {valor.direccion.calle} - {valor.direccion.ciudad} - {valor.direccion.pais}</li>
           ))
         }
       </ul>
@@ -195,19 +198,22 @@ export default function Home() {
       <ol id="listaejercicio3">
         {
           cursos.map((valor, indice)=>(
-            <li id="datalistaejer3">Curso: {valor.nombre} Modulos: {valor.modulos.map(m => m.nombre).join(" / ")}</li>
+            <li key={valor.id} id="datalistaejer3">Curso: {valor.nombre} Modulos: {valor.modulos.map(m => m.nombre).join(" / ")}</li>
           ))
         }
       </ol>
 
       <table id="tablaejercicio4">
-        <tr id="tablaatributos">
-          <th>Nombre</th>
-          <th>Detalles Pedido</th>
-        </tr>
+        <thead>
+          <tr id="tablaatributos">
+            <th>Nombre</th>
+            <th>Detalles Pedido</th>
+          </tr>
+        </thead>
+        <tbody>
         {
           pedidos.map((valor, indice)=>(
-            <tr id="tabladatos">
+            <tr key={valor.id} id="tabladatos">
               <td>{valor.cliente}</td>
               <td>
                 {
@@ -221,8 +227,8 @@ export default function Home() {
             </tr>
           ))
         }
+        </tbody>
       </table>
-
 
       <div>
         <h1 id="tittle-blog">BLOGS</h1>
