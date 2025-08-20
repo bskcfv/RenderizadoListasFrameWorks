@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Post from "@/components/Post";
 
 export default function Home() {
 
@@ -56,6 +57,7 @@ export default function Home() {
     id: 1,
     titulo: "Aprendiendo React",
     autor: { nombre: "Ana", pais: "Colombia" },
+    active: true,
     categorias: ["JavaScript", "Frontend"],
     comentarios: [
       {
@@ -79,6 +81,7 @@ export default function Home() {
     titulo: "Next.js SSR",
     autor: { nombre: "Luis", pais: "México" },
     categorias: ["JavaScript", "SSR"],
+    active:false,
     comentarios: [
       {
         usuario: "Marta",
@@ -100,6 +103,7 @@ export default function Home() {
     titulo: "Node.js API",
     autor: { nombre: "John", pais: "USA" },
     categorias: ["Backend", "API"],
+    active:true,
     comentarios: [
       {
         usuario: "Pedro",
@@ -121,6 +125,7 @@ export default function Home() {
     titulo: "Django ORM",
     autor: { nombre: "Marta", pais: "España" },
     categorias: ["Backend", "Python"],
+    active:false,
     comentarios: [
       {
         usuario: "Ana",
@@ -142,6 +147,7 @@ export default function Home() {
     titulo: "Flutter Widgets",
     autor: { nombre: "Pedro", pais: "Portugal" },
     categorias: ["Mobile", "UI"],
+    active:true,
     comentarios: [
       {
         usuario: "Luis",
@@ -166,6 +172,7 @@ export default function Home() {
 
   return (
     <div>
+      
       <table id="tableejercicio1">
         <thead id="atributos1">
           <tr>
@@ -230,68 +237,9 @@ export default function Home() {
         </tbody>
       </table>
 
-      <div>
-        <h1 id="tittle-blog">BLOGS</h1>
-        {
-          blogs.map((valor, indice)=>(
-            <div id="container-blog">
-              <h2>° Titulo: {valor.titulo}</h2>
-              <h3>° Autor: {valor.autor.nombre}</h3>
-              <h3>° De: {valor.autor.pais}</h3>
-              <div id="container-categorias">
-                <h3>Categorias: </h3>
-                {
-                  valor.categorias.map((ValorCategoria)=>(
-                    <ul>
-                      <li> - {ValorCategoria}</li>
-                    </ul>
-                  ))
-                }
-              </div>
-              <section id="section-Comentarios">
-                <h3>Comentarios: </h3>
-                {
-                  valor.comentarios.map((vc)=>(
-                    <div id="Container-Comentarios">
-                      <h4>Usuario: {vc.usuario}</h4>
-                      <p>Comentario: {vc.texto}</p>
-                      <section id="section-respuestas">
-                        <h3>Respuestas: </h3>
-                        {
-                          vc.respuestas.map((vre)=>(
-                            <div id="container-respuestas">
-                              <h5>{vre.usuario}</h5>
-                              <p>{vre.texto}</p>
-                              <section id="section-reacciones">
-                                <h3>Reacciones: </h3>
-                                {
-                                  vre.reacciones.map((vra)=>(
-                                    <div id="container-reacciones">
-                                      <h5>Reaccion: {vra.tipo}</h5>
-                                      <h6>User: {vra.usuario.nombre}</h6>
-                                      <h6>Rol: {vra.usuario.rol}</h6>
-                                    </div>
-                                  ))
-                                }
-                              </section>
-                            </div>
-                          ))
-                        }
-                      </section>
-                    </div>
-                  ))
-                }
-              </section>
-            </div>
-          ))
-        }
-      </div>
-
-
-
-
+      {/*Dos formas de Llamado del Componente*/}
+      <Post blogs={blogs}></Post>
       
-   
     </div>
   );
 }
